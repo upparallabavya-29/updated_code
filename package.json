@@ -1,0 +1,9 @@
+{
+  "name": "agrivision-ai-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cd AgriVisionAI/arivision-plant-doctor-main && npm run build",
+    "install": "cd AgriVisionAI/arivision-plant-doctor-main && npm install"
+  }
+}

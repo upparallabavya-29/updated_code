@@ -1,0 +1,11 @@
+{
+  "buildCommand": "cd AgriVisionAI/arivision-plant-doctor-main && npm run build",
+  "outputDirectory": "AgriVisionAI/arivision-plant-doctor-main/dist",
+  "installCommand": "cd AgriVisionAI/arivision-plant-doctor-main && npm install",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
