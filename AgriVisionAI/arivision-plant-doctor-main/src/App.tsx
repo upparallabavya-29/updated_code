@@ -1,0 +1,44 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { Toaster } from "@/components/ui/toaster";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import HomePage from "./pages/HomePage";
+import Dashboard from "./pages/Dashboard";
+import ScanPage from "./pages/ScanPage";
+import ResultsPage from "./pages/ResultsPage";
+import HistoryPage from "./pages/HistoryPage";
+import AboutPage from "./pages/AboutPage";
+import NotFound from "./pages/NotFound";
+import AdminDashboard from "./pages/AdminDashboard";
+import LoginPage from "./pages/LoginPage";
+import SignupPage from "./pages/SignupPage";
+import { Chatbot } from "./components/Chatbot";
+
+const queryClient = new QueryClient();
+
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/scan" element={<ScanPage />} />
+          <Route path="/results" element={<ResultsPage />} />
+          <Route path="/history" element={<HistoryPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Chatbot />
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
+);
+
+export default App;
